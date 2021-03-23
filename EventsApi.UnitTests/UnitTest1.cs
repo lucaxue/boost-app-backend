@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace MyFirstUnitTests
+namespace EventsApi.UnitTests
 {
     public class UnitTest1
     {

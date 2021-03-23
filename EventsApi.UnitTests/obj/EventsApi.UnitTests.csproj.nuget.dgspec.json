@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/johnjameshodgins/Documents/CloningFinalRepo/MyFirstUnitTests/MyFirstUnitTests.csproj": {}
+    "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj": {}
   },
   "projects": {
-    "/Users/johnjameshodgins/Documents/CloningFinalRepo/MyFirstUnitTests/MyFirstUnitTests.csproj": {
+    "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/johnjameshodgins/Documents/CloningFinalRepo/MyFirstUnitTests/MyFirstUnitTests.csproj",
-        "projectName": "MyFirstUnitTests",
-        "projectPath": "/Users/johnjameshodgins/Documents/CloningFinalRepo/MyFirstUnitTests/MyFirstUnitTests.csproj",
-        "packagesPath": "/Users/johnjameshodgins/.nuget/packages/",
-        "outputPath": "/Users/johnjameshodgins/Documents/CloningFinalRepo/MyFirstUnitTests/obj/",
+        "projectUniqueName": "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
+        "projectName": "EventsApi.UnitTests",
+        "projectPath": "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
+        "packagesPath": "/home/luca/.nuget/packages/",
+        "outputPath": "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi.UnitTests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/johnjameshodgins/.nuget/NuGet/NuGet.Config"
+          "/home/luca/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -74,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
         }
       }
     }
