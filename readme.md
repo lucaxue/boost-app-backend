@@ -2,33 +2,37 @@
 
 ## Routes (with Appropriate Controllers)
 
-### /users
+### `/users`
 
 - Get all users
+- Get user by user id
 - Post user
 - Update user
 - Delete user
-- Get one by user id
-- Get users by group id
+- Get users by group id (query string)
+  - `/users?groupId=1`
 
-### /groups
+### `/groups`
 
 - Get all groups
 - Get group by group id
-- Get group by user(admin) id
 - Post group
 - Update group
 - Delete group
+- Get group by user(admin) id (query string)
+  - `/groups?adminId=1`
 
-### /events
+### `/events`
 
 - Get all events
-- Get events by events id
-- Get events by group id
-- Get events by user id
+- Get event by events id
 - Post event
 - Update event
 - Delete event
+- Get events by group id (query string)
+  - `/events?groupId=1`
+- Get events by user id (query string)
+  - `/events?userId=1`
 
 Resource:
 [Database Tables Design](https://docs.google.com/presentation/d/1hhhONPnKfxotoaStLsFVPMhondxvifOlVBJBpZfzdQc/edit#slide=id.p)
