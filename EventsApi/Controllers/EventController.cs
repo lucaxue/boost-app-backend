@@ -18,8 +18,37 @@ public class EventController : ControllerBase
   [HttpGet]
   public async Task<IActionResult> GetAll()
   {
-    var allUsers = await _eventRepository.GetAll();
-    return Ok(allUsers);
+    try{
+    var allEvents = await _eventRepository.GetAll();
+    return Ok(allEvents);
+    }
+    catch(Exception)
+    {
+      return NotFound("Sorry there are no events");
+    }
   }
 
+  [HttpGet("{id}")]
+
+  public async Task<IActionResult> GetById(long id)
+  {
+    try
+    {
+      var returnedEvent = await _eventRepository.Get(id);
+      return Ok(returnedEvent);
+    }
+    catch(Exception)
+    {
+      return NotFound("Event not found. Are you sure you have the right id?");
+    }
+  } 
+
+
+
 }
+
+
+// - Get group by group id
+// - Post group
+// - Update group
+// - Delete group

@@ -14,4 +14,10 @@ public class EventRepository : BaseRepository, IRepository<Event>
 
   }
 
+  public async Task<Event> Get(long id)
+  {
+    using var connection = CreateConnection();
+    return await connection.QuerySingleAsync<Event>("SELECT * FROM Events WHERE Id=@Id;", new{Id=id});
+  }
+
 }
