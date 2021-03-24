@@ -18,12 +18,14 @@ public class UserRepository : BaseRepository, IRepository<User>
 
   public async Task<User> Get(long id)
   {
-    throw new NotImplementedException();
+    using var connection = CreateConnection();
+    return await connection.QuerySingleAsync<User>("SELECT * FROM Users WHERE Id=@Id;", new { Id = id });
   }
 
-  public async Task<User> Insert(User t)
+  public async Task<User> Insert(User userToInsert)
   {
-    throw new NotImplementedException();
+    using var connection = CreateConnection();
+    return await connection.QuerySingleAsync<User>("INSERT INTO Users(FirstName, Surname, Username, Hours, PartOfGroupId, AdminOfGroupId, EventsIds)VALUES (@FirstName, @Surname, @Username, @Hours, @PartOfGroupId, @AdminOfGroupId, @EventsIds)  RETURNING *", userToInsert);
   }
   public async Task<User> Update(User t)
   {
@@ -32,7 +34,8 @@ public class UserRepository : BaseRepository, IRepository<User>
 
   public async void Delete(long id)
   {
-    throw new NotImplementedException();
+    using var connection = CreateConnection();
+    connection.Execute("DELETE FROM Users WHERE Id = @Id;", new { Id = id });
   }
 
   public async Task<IEnumerable<User>> SearchById(long id)
