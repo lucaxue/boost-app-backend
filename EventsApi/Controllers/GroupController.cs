@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]s")]
 public class GroupController : ControllerBase
 {
   private readonly IRepository<Group> _groupRepository;

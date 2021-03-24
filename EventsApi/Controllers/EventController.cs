@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]s")]
 public class EventController : ControllerBase
 {
   private readonly IRepository<Event> _eventRepository;

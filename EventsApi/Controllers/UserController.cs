@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]s")]
 public class UserController : ControllerBase
 {
   private readonly IRepository<User> _userRepository;
