@@ -3,7 +3,8 @@ CREATE TABLE Groups (
   Name VARCHAR(50) UNIQUE
 );
 
-INSERT INTO Groups(Name) 
+INSERT INTO Groups
+  (Name) 
 VALUES 
   ('Weekend Warriors'),
   ('Young Mums'),
