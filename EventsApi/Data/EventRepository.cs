@@ -20,4 +20,10 @@ public class EventRepository : BaseRepository, IRepository<Event>
     return await connection.QuerySingleAsync<Event>("SELECT * FROM Events WHERE Id=@Id;", new{Id=id});
   }
 
+  public async Task<Event> Insert(Event eventToInsert)
+  {
+    using var connection = CreateConnection();
+    return await connection.QuerySingleAsync<Event>("INSERT INTO Events(Name, Description, ExerciseType, Longitude, Latitude, Time, Intensity, GroupId)VALUES);
+  }
+
 }

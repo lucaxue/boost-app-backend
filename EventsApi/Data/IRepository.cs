@@ -5,4 +5,6 @@ public interface IRepository<T>
   Task<IEnumerable<T>> GetAll();
   Task<T> Get(long id);
 
+  Task<T> Insert(T t);
+
 }

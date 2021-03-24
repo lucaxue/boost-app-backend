@@ -43,12 +43,27 @@ public class EventController : ControllerBase
     }
   } 
 
+    [HttpPost]
+
+  public async Task<IActionResult> Post([FromBody]Event eventToPost)
+  {
+    try
+    {
+      var postedEvent = await _eventRepository.Insert(eventToPost);
+      return Created($"/events/{postedEvent.id}",postedEvent);
+    }
+    catch(Exception)
+    {
+      return BadRequest("Sorry can not insert your event, is it valid?");
+    }
+  } 
+
 
 
 }
 
 
-// - Get group by group id
+
 // - Post group
 // - Update group
 // - Delete group
