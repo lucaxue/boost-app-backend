@@ -22,15 +22,13 @@
 
 ### `/events`
 
-- Get all events
-- Get event by events id
-- Post event
-- Update event
-- Delete event
-- Get events by group id (query string)
+- Get all events ✅
+- Get event by events id ✅
+- Post event ✅
+- Update event ✅
+- Delete event ✅
+- Get events by group id (query string)✅
   - `/events?groupId=1`
-- Get events by user id (query string)
-  - `/events?userId=1`
 
 Resource:
 [Database Tables Design](https://docs.google.com/presentation/d/1hhhONPnKfxotoaStLsFVPMhondxvifOlVBJBpZfzdQc/edit#slide=id.p)
