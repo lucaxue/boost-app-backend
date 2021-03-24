@@ -26,9 +26,22 @@ namespace EventsApi
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+      services.AddCors(options =>
+      {
+        options.AddDefaultPolicy(
+                  builder =>
+                  {
+                    // Add cross origin allowed domain
+                    builder.WithOrigins("http://localhost:3000", "https://localhost:3000")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                  });
+      });
+
       services.AddTransient<IRepository<User>, UserRepository>();
       services.AddTransient<IRepository<Group>, GroupRepository>();
       services.AddTransient<IRepository<Event>, EventRepository>();
+
       services.AddControllers();
       services.AddSwaggerGen(c =>
       {
@@ -46,9 +59,9 @@ namespace EventsApi
         app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EventsApi v1"));
       }
 
-      app.UseHttpsRedirection();
-
       app.UseRouting();
+
+      app.UseCors();
 
       app.UseAuthorization();
 
