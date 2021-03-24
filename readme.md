@@ -19,8 +19,6 @@
 - Post group
 - Update group
 - Delete group
-- Get group by user(admin) id (query string)
-  - `/groups?adminId=1`
 
 ### `/events`
 
