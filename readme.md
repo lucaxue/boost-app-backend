@@ -7,8 +7,8 @@
 - Get all users✅
 - Get user by user id✅
 - Post user✅
-- Update user
-- Delete user
+- Update user✅
+- Delete user✅
 - Get users by group id (query string)✅
   - `/users?groupId=1`
 - Get users by username (query string)✅
@@ -16,7 +16,7 @@
 
 ### `/groups`
 
-- Get all groups
+- Get all groups✅
 - Get group by group id
 - Post group
 - Update group

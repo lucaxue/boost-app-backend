@@ -69,7 +69,7 @@ public class UserController : ControllerBase
     }
     catch (Exception)
     {
-      return BadRequest("Sorry can not insert your user, is it valid?");
+      return BadRequest("Sorry can not insert your user, is it valid?\nTry another username");
     }
   }
 

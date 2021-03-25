@@ -17,12 +17,14 @@ public class GroupRepository : BaseRepository, IRepository<Group>
 
     public async Task<Group> Get(long id)
     {
-        throw new NotImplementedException();
+        using var connection = CreateConnection();
+        return await connection.QuerySingleAsync<Group>("SELECT * FROM Groups WHERE Id=@Id;", new { Id = id });
     }
 
-    public async Task<Group> Insert(Group t)
+    public async Task<Group> Insert(Group groupToInsert)
     {
-        throw new NotImplementedException();
+        using var connection = CreateConnection();
+        return await connection.QuerySingleAsync<Group>("INSERT INTO Groups(Name) VALUES (@Name)RETURNING *", groupToInsert);
     }
     public async Task<Group> Update(Group t)
     {
