@@ -41,4 +41,43 @@ public class UserController : ControllerBase
     }
   }
 
+
+[HttpGet("{id}")]
+
+  public async Task<IActionResult> GetById(long id)
+  {
+    try
+    {
+      var returnedUser = await _userRepository.Get(id);
+      return Ok(returnedUser);
+    }
+    catch (Exception)
+    {
+      return NotFound("User not found. Are you sure you have the right id?");
+    }
+  }
+
+
+[HttpPost]
+
+  public async Task<IActionResult> Post([FromBody] User userToPost)
+  {
+    try
+    {
+      var postedUser = await _userRepository.Insert(userToPost);
+      return Created($"/events/{postedUser.Id}", postedUser);
+    }
+    catch (Exception)
+    {
+      return BadRequest("Sorry can not insert your user, is it valid?");
+    }
+  }
+
 }
+
+
+
+
+// - Post user
+// - Update user
+// - Delete user
