@@ -17,10 +17,10 @@
 ### `/groups`
 
 - Get all groups✅
-- Get group by group id
-- Post group
-- Update group
-- Delete group
+- Get group by group id✅
+- Post group✅
+- Update group✅
+- Delete group✅
 - Get group by name (query string)✅
   - `/groups?name=Weekend Warriors`
 

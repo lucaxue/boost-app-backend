@@ -80,4 +80,18 @@ public class GroupController : ControllerBase
     }
   }
 
+  [HttpDelete("{id}")]
+  public IActionResult Delete(long id)
+  {
+    try
+    {
+      _groupRepository.Delete(id);
+      return Ok($"Group at id {id} is successfully deleted.");
+    }
+    catch (Exception)
+    {
+      return BadRequest($"Sorry, group of id {id} cannot be deleted, since it does not exit.\nAre you sure the id is correct?");
+    }
+  }
+
 }

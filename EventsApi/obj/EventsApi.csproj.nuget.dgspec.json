@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/johnjameshodgins/Documents/FinalProj backend/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj": {}
+    "C:\\Users\\SteveandNatalie\\Documents\\a_Jim\\Coding\\SOC Workflow\\WK 12&13\\project-back-end-we-don-t-byte\\EventsApi\\EventsApi.csproj": {}
   },
   "projects": {
-    "/Users/johnjameshodgins/Documents/FinalProj backend/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj": {
+    "C:\\Users\\SteveandNatalie\\Documents\\a_Jim\\Coding\\SOC Workflow\\WK 12&13\\project-back-end-we-don-t-byte\\EventsApi\\EventsApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/johnjameshodgins/Documents/FinalProj backend/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
+        "projectUniqueName": "C:\\Users\\SteveandNatalie\\Documents\\a_Jim\\Coding\\SOC Workflow\\WK 12&13\\project-back-end-we-don-t-byte\\EventsApi\\EventsApi.csproj",
         "projectName": "EventsApi",
-        "projectPath": "/Users/johnjameshodgins/Documents/FinalProj backend/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
-        "packagesPath": "/Users/johnjameshodgins/.nuget/packages/",
-        "outputPath": "/Users/johnjameshodgins/Documents/FinalProj backend/project-back-end-we-don-t-byte/EventsApi/obj/",
+        "projectPath": "C:\\Users\\SteveandNatalie\\Documents\\a_Jim\\Coding\\SOC Workflow\\WK 12&13\\project-back-end-we-don-t-byte\\EventsApi\\EventsApi.csproj",
+        "packagesPath": "C:\\Users\\SteveandNatalie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SteveandNatalie\\Documents\\a_Jim\\Coding\\SOC Workflow\\WK 12&13\\project-back-end-we-don-t-byte\\EventsApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/johnjameshodgins/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\SteveandNatalie\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -69,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
