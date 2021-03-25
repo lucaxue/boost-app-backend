@@ -42,7 +42,7 @@ public class UserController : ControllerBase
   }
 
 
-[HttpGet("{id}")]
+  [HttpGet("{id}")]
 
   public async Task<IActionResult> GetById(long id)
   {
@@ -58,14 +58,14 @@ public class UserController : ControllerBase
   }
 
 
-[HttpPost]
+  [HttpPost]
 
   public async Task<IActionResult> Post([FromBody] User userToPost)
   {
     try
     {
       var postedUser = await _userRepository.Insert(userToPost);
-      return Created($"/events/{postedUser.Id}", postedUser);
+      return Created($"/users/{postedUser.Id}", postedUser);
     }
     catch (Exception)
     {
@@ -74,7 +74,7 @@ public class UserController : ControllerBase
   }
 
 
-[HttpDelete("{id}")]
+  [HttpDelete("{id}")]
   public IActionResult Delete(long id)
   {
     try
@@ -89,13 +89,13 @@ public class UserController : ControllerBase
   }
 
 
- [HttpPut("{id}")]
+  [HttpPut("{id}")]
 
   public async Task<IActionResult> Put(long id, [FromBody] User userToPut)
   {
     try
     {
-    userToPut.Id = id;
+      userToPut.Id = id;
       var updatedUser = await _userRepository.Update(userToPut);
       return Ok(updatedUser);
     }
