@@ -9,9 +9,9 @@
 - Post user
 - Update user
 - Delete user
-- Get users by group id (query string)
+- Get users by group id (query string)✅
   - `/users?groupId=1`
-- Get users by username (query string)
+- Get users by username (query string)✅
   - `/users?username=JimBob`
 
 ### `/groups`
@@ -21,6 +21,8 @@
 - Post group
 - Update group
 - Delete group
+- Get group by name (query string)✅
+  - `/groups?name=Weekend Warriors`
 
 ### `/events`
 
