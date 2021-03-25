@@ -32,7 +32,7 @@ public class GroupRepository : BaseRepository, IRepository<Group>
         return await connection.QuerySingleAsync<Group>("UPDATE Groups SET Name = @Name WHERE Id = @Id RETURNING *;", groupToUpdate);
     }
 
-    public async void Delete(long id)
+    public void Delete(long id)
     {
         using var connection = CreateConnection();
         connection.Execute("DELETE FROM Groups WHERE Id = @Id;", new { Id = id });
