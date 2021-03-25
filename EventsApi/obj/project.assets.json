@@ -287,19 +287,19 @@
     ]
   },
   "packageFolders": {
-    "/home/luca/.nuget/packages/": {}
+    "C:\\Users\\SteveandNatalie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
+      "projectUniqueName": "C:\\Users\\SteveandNatalie\\Documents\\a_Jim\\Coding\\SOC Workflow\\WK 12&13\\project-back-end-we-don-t-byte\\EventsApi\\EventsApi.csproj",
       "projectName": "EventsApi",
-      "projectPath": "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
-      "packagesPath": "/home/luca/.nuget/packages/",
-      "outputPath": "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi/obj/",
+      "projectPath": "C:\\Users\\SteveandNatalie\\Documents\\a_Jim\\Coding\\SOC Workflow\\WK 12&13\\project-back-end-we-don-t-byte\\EventsApi\\EventsApi.csproj",
+      "packagesPath": "C:\\Users\\SteveandNatalie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\SteveandNatalie\\Documents\\a_Jim\\Coding\\SOC Workflow\\WK 12&13\\project-back-end-we-don-t-byte\\EventsApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/luca/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\SteveandNatalie\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -354,7 +354,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
