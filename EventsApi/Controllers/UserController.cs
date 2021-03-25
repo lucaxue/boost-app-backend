@@ -16,10 +16,29 @@ public class UserController : ControllerBase
   }
 
   [HttpGet]
-  public async Task<IActionResult> GetAll()
+  public async Task<IActionResult> GetAll(string groupId, string username)
   {
-    var allUsers = await _userRepository.GetAll();
-    return Ok(allUsers);
+    try
+    {
+      //if group is is not null
+      //search by group id with repo
+      if (groupId != null)
+      {
+        var searchedByGroupIdResults = await _userRepository.Search(groupId);
+        return Ok(searchedByGroupIdResults);
+      }
+      if (username != null)
+      {
+        var searchedByUsernameResults = await _userRepository.Search(username);
+        return Ok(searchedByUsernameResults);
+      }
+      var allUsers = await _userRepository.GetAll();
+      return Ok(allUsers);
+    }
+    catch (Exception)
+    {
+      return NotFound("Sorry, there are no users.");
+    }
   }
 
 }

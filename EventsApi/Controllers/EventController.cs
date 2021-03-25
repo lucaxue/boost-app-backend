@@ -16,13 +16,13 @@ public class EventController : ControllerBase
   }
 
   [HttpGet]
-  public async Task<IActionResult> Get(long groupId = 0)
+  public async Task<IActionResult> Get(string groupId)
   {
     try
     {
-      if (groupId != 0)
+      if (groupId != null)
       {
-        var searchedByGroupIdResults = await _eventRepository.SearchById(groupId);
+        var searchedByGroupIdResults = await _eventRepository.Search(groupId);
         return Ok(searchedByGroupIdResults);
       }
       var allEvents = await _eventRepository.GetAll();

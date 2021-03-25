@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Dapper;
 using System.Threading.Tasks;
+using System;
+
 public class EventRepository : BaseRepository, IRepository<Event>
 {
   public EventRepository(IConfiguration configuration) : base(configuration) { }
@@ -30,9 +32,9 @@ public class EventRepository : BaseRepository, IRepository<Event>
     using var connection = CreateConnection();
     connection.Execute("DELETE FROM Events WHERE Id = @Id;", new { Id = id });
   }
-  public async Task<IEnumerable<Event>> SearchById(long groupId)
+  public async Task<IEnumerable<Event>> Search(string query)
   {
     using var connection = CreateConnection();
-    return await connection.QueryAsync<Event>("SELECT * FROM Events WHERE GroupId = @GroupId;", new { GroupId = groupId });
+    return await connection.QueryAsync<Event>("SELECT * FROM Events WHERE GroupId = @GroupId;", new { GroupId = Int32.Parse(query) });
   }
 }

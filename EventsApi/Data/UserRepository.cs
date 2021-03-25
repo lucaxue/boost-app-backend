@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Dapper;
 using System.Threading.Tasks;
 using System;
+using System.Text.RegularExpressions;
 public class UserRepository : BaseRepository, IRepository<User>
 {
 
@@ -32,15 +33,24 @@ public class UserRepository : BaseRepository, IRepository<User>
     throw new NotImplementedException();
   }
 
-  public async void Delete(long id)
+  public void Delete(long id)
   {
     using var connection = CreateConnection();
     connection.Execute("DELETE FROM Users WHERE Id = @Id;", new { Id = id });
   }
 
-  public async Task<IEnumerable<User>> SearchById(long id)
+  public async Task<IEnumerable<User>> Search(string query)
   {
-    throw new NotImplementedException();
+    //check if query passed in is an integer
+    Regex digitsRegex = new Regex(@"\d");
+    using var connection = CreateConnection();
+    if (digitsRegex.IsMatch(query))
+    {
+      //look by groupId
+      return await connection.QueryAsync<User>("SELECT * FROM Users WHERE PartOfGroupId = @PartOfGroupId;", new { GroupId = Int32.Parse(query) });
+    }
+    //look by username
+    return await connection.QueryAsync<User>("SELECT * FROM Users WHERE Username = @Username;", new { Username = query });
   }
 
 }

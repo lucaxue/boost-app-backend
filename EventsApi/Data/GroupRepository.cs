@@ -34,7 +34,7 @@ public class GroupRepository : BaseRepository, IRepository<Group>
     throw new NotImplementedException();
   }
 
-  public async Task<IEnumerable<Group>> SearchById(long id)
+  public async Task<IEnumerable<Group>> Search(string query)
   {
     throw new NotImplementedException();
   }

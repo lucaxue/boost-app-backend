@@ -10,6 +10,6 @@ public interface IRepository<T>
 
   void Delete(long id);
 
-  Task<IEnumerable<T>> SearchById(long id);
+  Task<IEnumerable<T>> Search(string query);
 
 }

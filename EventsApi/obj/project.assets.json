@@ -292,11 +292,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
+      "projectUniqueName": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
       "projectName": "EventsApi",
-      "projectPath": "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
+      "projectPath": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
       "packagesPath": "/home/luca/.nuget/packages/",
-      "outputPath": "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi/obj/",
+      "outputPath": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/luca/.nuget/NuGet/NuGet.Config"
