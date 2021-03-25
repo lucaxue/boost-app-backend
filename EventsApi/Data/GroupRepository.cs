@@ -26,10 +26,11 @@ public class GroupRepository : BaseRepository, IRepository<Group>
         using var connection = CreateConnection();
         return await connection.QuerySingleAsync<Group>("INSERT INTO Groups(Name) VALUES (@Name)RETURNING *", groupToInsert);
     }
-    public async Task<Group> Update(Group t)
-    {
-        throw new NotImplementedException();
-    }
+  public async Task<Group> Update(Group groupToUpdate)
+  {
+    using var connection = CreateConnection();
+    return await connection.QuerySingleAsync<Group>("UPDATE Groups SET Name = @Name WHERE Id = @Id RETURNING *;", groupToUpdate);
+  }
 
     public async void Delete(long id)
     {

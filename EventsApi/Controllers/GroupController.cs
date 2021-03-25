@@ -56,11 +56,27 @@ public class GroupController : ControllerBase
     try
     {
       var postedGroup = await _groupRepository.Insert(groupToPost);
-      return Created($"/events/{postedGroup.Id}", postedGroup);
+      return Created($"/groups/{postedGroup.Id}", postedGroup);
     }
     catch (Exception)
     {
       return BadRequest("Sorry can not insert your group, is it valid?");
+    }
+  }
+
+  [HttpPut("{id}")]
+
+  public async Task<IActionResult> Put(long id, [FromBody] Group groupToPut)
+  {
+    try
+    {
+      groupToPut.Id = id;
+      var updatedgroup = await _groupRepository.Update(groupToPut);
+      return Ok(updatedgroup);
+    }
+    catch (Exception)
+    {
+      return BadRequest("Sorry can not update your Group. Is your id and your Group valid?");
     }
   }
 

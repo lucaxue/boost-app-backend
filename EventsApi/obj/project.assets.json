@@ -287,19 +287,19 @@
     ]
   },
   "packageFolders": {
-    "/home/luca/.nuget/packages/": {}
+    "/Users/johnjameshodgins/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
+      "projectUniqueName": "/Users/johnjameshodgins/Documents/FinalProj backend/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
       "projectName": "EventsApi",
-      "projectPath": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
-      "packagesPath": "/home/luca/.nuget/packages/",
-      "outputPath": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/obj/",
+      "projectPath": "/Users/johnjameshodgins/Documents/FinalProj backend/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
+      "packagesPath": "/Users/johnjameshodgins/.nuget/packages/",
+      "outputPath": "/Users/johnjameshodgins/Documents/FinalProj backend/project-back-end-we-don-t-byte/EventsApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/luca/.nuget/NuGet/NuGet.Config"
+        "/Users/johnjameshodgins/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -354,7 +354,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
       }
     }
   }
