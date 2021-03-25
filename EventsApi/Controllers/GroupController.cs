@@ -16,10 +16,21 @@ public class GroupController : ControllerBase
   }
 
   [HttpGet]
-  public async Task<IActionResult> GetAll()
+  public async Task<IActionResult> GetAll(string name)
   {
-    var allUsers = await _groupRepository.GetAll();
-    return Ok(allUsers);
+    try
+    { 
+      if (name != null)
+      {
+        var searchByNameResults = await _groupRepository.Search(name);
+        return Ok(searchByNameResults);
+      }
+    var allGroups = await _groupRepository.GetAll();
+    return Ok(allGroups);
+    }
+    catch (Exception)
+    {
+      return NotFound("Sorry, there are no users.");
+    }
   }
-
 }

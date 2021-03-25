@@ -47,7 +47,7 @@ public class UserRepository : BaseRepository, IRepository<User>
     if (digitsRegex.IsMatch(query))
     {
       //look by groupId
-      return await connection.QueryAsync<User>("SELECT * FROM Users WHERE PartOfGroupId = @PartOfGroupId;", new { GroupId = Int32.Parse(query) });
+      return await connection.QueryAsync<User>("SELECT * FROM Users WHERE PartOfGroupId = @PartOfGroupId;", new { PartOfGroupId = Int32.Parse(query) });
     }
     //look by username
     return await connection.QueryAsync<User>("SELECT * FROM Users WHERE Username = @Username;", new { Username = query });
