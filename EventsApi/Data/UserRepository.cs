@@ -28,9 +28,11 @@ public class UserRepository : BaseRepository, IRepository<User>
     using var connection = CreateConnection();
     return await connection.QuerySingleAsync<User>("INSERT INTO Users(FirstName, Surname, Username, Hours, PartOfGroupId, AdminOfGroupId, EventsIds)VALUES (@FirstName, @Surname, @Username, @Hours, @PartOfGroupId, @AdminOfGroupId, @EventsIds)  RETURNING *", userToInsert);
   }
-  public async Task<User> Update(User t)
+  public async Task<User> Update(User userToUpdate)
+
   {
-    throw new NotImplementedException();
+    using var connection = CreateConnection();
+    return await connection.QuerySingleAsync<User>("UPDATE Users SET FirstName =@FirstName, Surname=@Surname, Username=@Username, Hours=@Hours, PartOfGroupId=@PartOfGroupId, AdminOfGroupId=@AdminOfGroupId, EventsIds=@EventsIds WHERE Id = @Id RETURNING *;", userToUpdate);
   }
 
   public void Delete(long id)

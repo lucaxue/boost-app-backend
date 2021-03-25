@@ -4,9 +4,9 @@
 
 ### `/users`
 
-- Get all users
-- Get user by user id
-- Post user
+- Get all users✅
+- Get user by user id✅
+- Post user✅
 - Update user
 - Delete user
 - Get users by group id (query string)✅

@@ -73,11 +73,39 @@ public class UserController : ControllerBase
     }
   }
 
+
+[HttpDelete("{id}")]
+  public IActionResult Delete(long id)
+  {
+    try
+    {
+      _userRepository.Delete(id);
+      return Ok($"User at id {id} is successfully deleted.");
+    }
+    catch (Exception)
+    {
+      return BadRequest($"Sorry, user of id {id} cannot be deleted, since it does not exit.\nAre you sure the id is correct?");
+    }
+  }
+
+
+ [HttpPut("{id}")]
+
+  public async Task<IActionResult> Put(long id, [FromBody] User userToPut)
+  {
+    try
+    {
+    userToPut.Id = id;
+      var updatedUser = await _userRepository.Update(userToPut);
+      return Ok(updatedUser);
+    }
+    catch (Exception)
+    {
+      return BadRequest("Sorry can not update your user. Is your id and your user valid?");
+    }
+  }
+
 }
 
 
 
-
-// - Post user
-// - Update user
-// - Delete user
