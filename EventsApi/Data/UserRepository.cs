@@ -3,7 +3,8 @@ using Microsoft.Extensions.Configuration;
 using Dapper;
 using System.Threading.Tasks;
 using System;
-using System.Text.RegularExpressions;
+using System.Linq;
+
 public class UserRepository : BaseRepository, IRepository<User>
 {
 
@@ -44,9 +45,8 @@ public class UserRepository : BaseRepository, IRepository<User>
   public async Task<IEnumerable<User>> Search(string query)
   {
     //check if query passed in is an integer
-    Regex digitsRegex = new Regex(@"\d");
     using var connection = CreateConnection();
-    if (digitsRegex.IsMatch(query))
+    if (query.All(char.IsDigit))
     {
       //look by groupId
       return await connection.QueryAsync<User>("SELECT * FROM Users WHERE PartOfGroupId = @PartOfGroupId;", new { PartOfGroupId = Int32.Parse(query) });
