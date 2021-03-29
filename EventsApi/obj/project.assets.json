@@ -287,19 +287,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SteveandNatalie\\.nuget\\packages\\": {}
+    "C:\\Users\\seren\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SteveandNatalie\\Documents\\a_Jim\\Coding\\SOC Workflow\\WK 12 and 13\\project-back-end-we-don-t-byte\\EventsApi\\EventsApi.csproj",
+      "projectUniqueName": "C:\\Users\\seren\\Documents\\School of code\\FinalProj\\project-back-end-we-don-t-byte\\EventsApi\\EventsApi.csproj",
       "projectName": "EventsApi",
-      "projectPath": "C:\\Users\\SteveandNatalie\\Documents\\a_Jim\\Coding\\SOC Workflow\\WK 12 and 13\\project-back-end-we-don-t-byte\\EventsApi\\EventsApi.csproj",
-      "packagesPath": "C:\\Users\\SteveandNatalie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SteveandNatalie\\Documents\\a_Jim\\Coding\\SOC Workflow\\WK 12 and 13\\project-back-end-we-don-t-byte\\EventsApi\\obj\\",
+      "projectPath": "C:\\Users\\seren\\Documents\\School of code\\FinalProj\\project-back-end-we-don-t-byte\\EventsApi\\EventsApi.csproj",
+      "packagesPath": "C:\\Users\\seren\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\seren\\Documents\\School of code\\FinalProj\\project-back-end-we-don-t-byte\\EventsApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\SteveandNatalie\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\seren\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

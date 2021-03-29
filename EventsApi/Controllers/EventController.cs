@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
-
+using System.Linq;
 
 [ApiController]
 [Route("[controller]s")]
@@ -23,7 +23,8 @@ public class EventController : ControllerBase
       if (groupId != null)
       {
         var searchedByGroupIdResults = await _eventRepository.Search(groupId);
-        return Ok(searchedByGroupIdResults);
+        return Ok(searchedByGroupIdResults.OrderBy((eachEvent) => eachEvent.Time));
+
       }
       var allEvents = await _eventRepository.GetAll();
       return Ok(allEvents);
