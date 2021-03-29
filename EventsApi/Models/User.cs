@@ -16,7 +16,7 @@ public class User
 
   public int Hours { get; set; }
   public int PartOfGroupId { get; set; }
-  public int AdminOfGroupId { get; set; }
+  public int? AdminOfGroupId { get; set; }
   public int[] EventsIds { get; set; }
 
 }
