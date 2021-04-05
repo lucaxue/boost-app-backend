@@ -66,5 +66,6 @@ namespace EventsApi.UnitTests
             //assert
             statusCode.Should().Be(200);
         }
+
     }
 }
