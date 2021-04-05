@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj": {}
+    "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj": {}
   },
   "projects": {
-    "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj": {
+    "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
+        "projectUniqueName": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
         "projectName": "EventsApi.UnitTests",
-        "projectPath": "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
+        "projectPath": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
         "packagesPath": "/home/luca/.nuget/packages/",
-        "outputPath": "/home/luca/SOCprojects/finalProject/backend/project-back-end-we-don-t-byte/EventsApi.UnitTests/obj/",
+        "outputPath": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi.UnitTests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/luca/.nuget/NuGet/NuGet.Config"
@@ -25,7 +25,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj": {
+                "projectPath": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -38,9 +42,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.3, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.7.1, )"
+            },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[4.2.2, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -70,6 +82,75 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
+        "projectName": "EventsApi",
+        "projectPath": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
+        "packagesPath": "/home/luca/.nuget/packages/",
+        "outputPath": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/luca/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.78, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
