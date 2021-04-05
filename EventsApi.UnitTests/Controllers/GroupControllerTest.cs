@@ -34,6 +34,7 @@ namespace GroupsApi.UnitTests
 
             var groupRepository = Substitute.For<IRepository<Group>>();
             groupRepository.GetAll().Returns(x => _groups);
+            groupRepository.Get(2).Returns(x => _groups[1]);
 
             _controller = new GroupController(groupRepository);
         }
@@ -64,6 +65,26 @@ namespace GroupsApi.UnitTests
         {
             //act
             var statusCode = ((OkObjectResult)_controller.Delete(2)).StatusCode;
+            //assert
+            statusCode.Should().Be(200);
+        }
+
+          [Fact]
+        public async Task GetById_PassedInTwo_ReturnGroupsAtIdTwo()
+        {
+            //act
+            var result = await _controller.GetById(2);
+            var returnedGroup = ((OkObjectResult)result).Value as Group;
+            //assert
+            returnedGroup.Should().BeEquivalentTo(_groups[1]);
+        }
+
+        [Fact]
+        public async Task GetById_PassedInTwo_ReturnStatusCodeTwoHundred()
+        {
+            //act
+            var result = await _controller.GetById(2);
+            var statusCode = ((OkObjectResult)result).StatusCode;
             //assert
             statusCode.Should().Be(200);
         }

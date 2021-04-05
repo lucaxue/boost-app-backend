@@ -55,6 +55,7 @@ namespace EventsApi.UnitTests
 
             var eventRepository = Substitute.For<IRepository<Event>>();
             eventRepository.GetAll().Returns(x => _events);
+            eventRepository.Get(2).Returns(x => _events[1]);
 
             _controller = new EventController(eventRepository);
         }
@@ -90,6 +91,25 @@ namespace EventsApi.UnitTests
             statusCode.Should().Be(200);
         }
 
+        [Fact]
+        public async Task GetById_PassedInTwo_ReturnEventAtIdTwo()
+        {
+            //act
+            var result = await _controller.GetById(2);
+            var returnedEvent = ((OkObjectResult)result).Value as Event;
+            //assert
+            returnedEvent.Should().BeEquivalentTo(_events[1]);
+        }
+
+        [Fact]
+        public async Task GetById_PassedInTwo_ReturnStatusCodeTwoHundred()
+        {
+            //act
+            var result = await _controller.GetById(2);
+            var statusCode = ((OkObjectResult)result).StatusCode;
+            //assert
+            statusCode.Should().Be(200);
+        }
 
     }
 }

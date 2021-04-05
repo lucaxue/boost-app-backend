@@ -6,7 +6,7 @@ using NSubstitute;
 using Microsoft.AspNetCore.Mvc;
 using FluentAssertions;
 
-namespace EventsApi.UnitTests
+namespace UsersApi.UnitTests
 {
     public class UserControllerTest
     {
@@ -52,6 +52,7 @@ namespace EventsApi.UnitTests
 
             var userRepository = Substitute.For<IRepository<User>>();
             userRepository.GetAll().Returns(x => _users);
+            userRepository.Get(3).Returns(x => _users[2]);
 
             _controller = new UserController(userRepository);
         }
@@ -82,6 +83,26 @@ namespace EventsApi.UnitTests
         {
             //act
             var statusCode = ((OkObjectResult)_controller.Delete(2)).StatusCode;
+            //assert
+            statusCode.Should().Be(200);
+        }
+
+        [Fact]
+        public async Task GetById_PassedInTwo_ReturnUserAtIdTwo()
+        {
+            //act
+            var result = await _controller.GetById(3);
+            var returnedUser = ((OkObjectResult)result).Value as User;
+            //assert
+            returnedUser.Should().BeEquivalentTo(_users[2]);
+        }
+
+        [Fact]
+        public async Task GetById_PassedInTwo_ReturnStatusCodeTwoHundred()
+        {
+            //act
+            var result = await _controller.GetById(2);
+            var statusCode = ((OkObjectResult)result).StatusCode;
             //assert
             statusCode.Should().Be(200);
         }
