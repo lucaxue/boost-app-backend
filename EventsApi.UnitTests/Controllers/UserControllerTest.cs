@@ -39,7 +39,7 @@ namespace EventsApi.UnitTests
                     EventsIds= new int[]{2},
                 },
                 new User {
-                    Id=1,
+                    Id=3,
                     FirstName="Jimmertson",
                     Surname="Bobert",
                     Username="jimmertsonbobert",
@@ -63,6 +63,25 @@ namespace EventsApi.UnitTests
             //act
             var result = await _controller.GetAll(null, null);
             var statusCode = ((OkObjectResult)result).StatusCode;
+            //assert
+            statusCode.Should().Be(200);
+        }
+
+        [Fact]
+        public async Task GetAll_NullAndNullPassedIn_ReturnsAllUsers()
+        {
+            //act
+            var result = await _controller.GetAll(null, null);
+            var users = ((OkObjectResult)result).Value as List<User>;
+            //assert
+            users.Should().BeEquivalentTo(_users);
+        }
+
+        [Fact]
+        public void Delete_CalledWithId_ReturnStatusCode200()
+        {
+            //act
+            var statusCode = ((OkObjectResult)_controller.Delete(2)).StatusCode;
             //assert
             statusCode.Should().Be(200);
         }

@@ -70,5 +70,26 @@ namespace EventsApi.UnitTests
             statusCode.Should().Be(200);
         }
 
+        
+        [Fact]
+        public async Task Get_NullPassedIn_ReturnsAllEvents()
+        {
+            //act
+            var result = await _controller.Get(null);
+            var events = ((OkObjectResult)result).Value as List<Event>;
+            //assert
+            events.Should().BeEquivalentTo(_events);
+        }
+
+        [Fact]
+        public void Delete_CalledWithId_ReturnStatusCode200()
+        {
+            //act
+            var statusCode = ((OkObjectResult)_controller.Delete(2)).StatusCode;
+            //assert
+            statusCode.Should().Be(200);
+        }
+
+
     }
 }
