@@ -98,7 +98,7 @@ namespace UsersApi.UnitTests
         }
 
         [Fact]
-        public async Task GetById_PassedInTwo_ReturnStatusCodeTwoHundred()
+        public async Task GetById_PassedInTwo_ReturnStatusCode200()
         {
             //act
             var result = await _controller.GetById(2);
