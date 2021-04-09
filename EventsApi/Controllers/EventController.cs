@@ -53,7 +53,7 @@ public class EventController : ControllerBase
 
   [HttpPost]
 
-  public async Task<IActionResult> Post(Event eventToPost)
+  public async Task<IActionResult> Post([FromBody] Event eventToPost)
   {
     try
     {

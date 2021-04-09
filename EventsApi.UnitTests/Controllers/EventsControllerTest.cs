@@ -79,6 +79,7 @@ namespace EventsApi.UnitTests
                 Intensity = "easy",
                 GroupId = 3,
             };
+
             _eventToPost = new Event
             {
                 Name = "walking with laptops in our and coding",
@@ -90,6 +91,7 @@ namespace EventsApi.UnitTests
                 Intensity = "Hard",
                 GroupId = 3,
             };
+            
             _eventPosted = new Event
             {
                 Id=4,
@@ -107,7 +109,6 @@ namespace EventsApi.UnitTests
 
             eventRepository.GetAll().Returns(x => _events);
             eventRepository.Search("3").Returns(x => _events);
-            // eventRepository.Search("3").Returns(x => new List<Event>(){_events[2]});
             eventRepository.Get(2).Returns(x => _events[1]);
             eventRepository.Update(_eventToUpdate).Returns(x => _eventToUpdate);
             eventRepository.Insert(_eventToPost).Returns(x => _eventPosted);

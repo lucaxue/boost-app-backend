@@ -14,6 +14,9 @@ namespace GroupsApi.UnitTests
         //fields
         readonly GroupController _controller;
         readonly List<Group> _groups;
+        readonly Group _groupToUpdate;
+        readonly Group _groupToPost;
+        readonly Group _groupPosted;
 
         public GroupsControllerTest()
         {
@@ -32,9 +35,28 @@ namespace GroupsApi.UnitTests
                 },
             };
 
+            _groupToUpdate = new Group 
+            {
+                Id=3,
+                Name="Beat the Bulge!",
+            };
+
+            _groupToPost = new Group
+            {
+                Name="The Fishermen"
+            };
+
+            _groupPosted = new Group
+            {
+                Id=4,
+                Name="The Fishermen"
+            };
+
             var groupRepository = Substitute.For<IRepository<Group>>();
             groupRepository.GetAll().Returns(x => _groups);
             groupRepository.Get(2).Returns(x => _groups[1]);
+            groupRepository.Update(_groupToUpdate).Returns(x => _groupToUpdate);
+            groupRepository.Insert(_groupToPost).Returns(x => _groupPosted);
 
             _controller = new GroupController(groupRepository);
         }
@@ -69,7 +91,17 @@ namespace GroupsApi.UnitTests
             statusCode.Should().Be(200);
         }
 
-          [Fact]
+        [Fact]
+        public async Task GetById_PassedInTwo_ReturnStatusCode200()
+        {
+            //act
+            var result = await _controller.GetById(2);
+            var statusCode = ((OkObjectResult)result).StatusCode;
+            //assert
+            statusCode.Should().Be(200);
+        }
+
+        [Fact]
         public async Task GetById_PassedInTwo_ReturnGroupsAtIdTwo()
         {
             //act
@@ -80,14 +112,46 @@ namespace GroupsApi.UnitTests
         }
 
         [Fact]
-        public async Task GetById_PassedInTwo_ReturnStatusCode200()
+        public async Task Put_PassedInIdAndUpdatedGroup_ReturnsStatusCode200()
         {
             //act
-            var result = await _controller.GetById(2);
+            var result = await _controller.Put(3, _groupToUpdate);
             var statusCode = ((OkObjectResult)result).StatusCode;
             //assert
             statusCode.Should().Be(200);
         }
+
+        
+        [Fact]
+        public async Task Put_PassedInIdAndUpdatedGroup_ReturnsUpdatedGroup()
+        {
+            //act
+            var result = await _controller.Put(3, _groupToUpdate);
+            var updatedGroup = ((OkObjectResult)result).Value as Group;
+            //assert
+            updatedGroup.Should().Be(_groupToUpdate);
+        }
+
+        [Fact]
+        public async Task Post_PassedInNewGroup_ReturnsStatusCode201()
+        {
+            //act
+            var result = await _controller.Post(_groupToPost);
+            var statusCode = ((ObjectResult)result).StatusCode;
+            //assert
+            statusCode.Should().Be(201);
+        }
+        [Fact]
+        public async Task Post_PassedInNewGroup_ReturnsPostedGroup()
+        {
+            //act
+            var result = await _controller.Post(_groupToPost);
+            var postedGroup = ((ObjectResult)result).Value as Group;
+            //assert
+            postedGroup.Should().Be(_groupPosted);
+        }
+      
+
 
 
     }
