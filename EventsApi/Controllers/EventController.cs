@@ -23,7 +23,7 @@ public class EventController : ControllerBase
       if (groupId != null)
       {
         var searchedByGroupIdResults = await _eventRepository.Search(groupId);
-       // return Ok(searchedByGroupIdResults.OrderBy((eachEvent) => eachEvent.Time));
+        // return Ok(searchedByGroupIdResults.OrderBy((eachEvent) => eachEvent.Time));
         return Ok(searchedByGroupIdResults);
 
       }
@@ -53,7 +53,7 @@ public class EventController : ControllerBase
 
   [HttpPost]
 
-  public async Task<IActionResult> Post([FromBody] Event eventToPost)
+  public async Task<IActionResult> Post(Event eventToPost)
   {
     try
     {
