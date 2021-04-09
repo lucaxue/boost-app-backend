@@ -17,7 +17,7 @@ namespace EventsApi.UnitTests
 
         public EventsControllerTest()
         {
-            _events = new List<Event>{
+            _events = new List<Event>(){
                 new Event {
                     Id=1,
                     Name="running",
@@ -56,7 +56,8 @@ namespace EventsApi.UnitTests
             var eventRepository = Substitute.For<IRepository<Event>>();
 
             eventRepository.GetAll().Returns(x => _events);
-            eventRepository.Search("3").Returns(x => new Event[]{_events[2]});
+            eventRepository.Search("3").Returns(x => _events);
+           // eventRepository.Search("3").Returns(x => new List<Event>(){_events[2]});
             eventRepository.Get(2).Returns(x => _events[1]);
 
             _controller = new EventController(eventRepository);
@@ -91,7 +92,7 @@ namespace EventsApi.UnitTests
             var result = await _controller.Get("3");
             var events = ((OkObjectResult)result).Value as List<Event>;
             //assert
-            events.Should().BeEquivalentTo(new Event[]{_events[2]});
+            events.Should().BeEquivalentTo(_events);
         }
 
         [Fact]
