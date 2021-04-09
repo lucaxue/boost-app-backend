@@ -23,7 +23,8 @@ public class EventController : ControllerBase
       if (groupId != null)
       {
         var searchedByGroupIdResults = await _eventRepository.Search(groupId);
-        return Ok(searchedByGroupIdResults.OrderBy((eachEvent) => eachEvent.Time));
+        // return Ok(searchedByGroupIdResults.OrderBy((eachEvent) => eachEvent.Time));
+        return Ok(searchedByGroupIdResults);
 
       }
       var allEvents = await _eventRepository.GetAll();
