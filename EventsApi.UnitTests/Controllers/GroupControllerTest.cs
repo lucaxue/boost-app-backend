@@ -84,6 +84,16 @@ namespace GroupsApi.UnitTests
         }
 
         [Fact]
+        public async Task GetAll_StringPassedIn_ReturnsStatusCode200()
+        {
+            //act
+            var result = await _controller.GetAll("mum");
+            var statusCode = ((OkObjectResult)result).StatusCode;
+            //assert
+            statusCode.Should().Be(200);
+        }
+
+        [Fact]
         public async Task GetAll_StringPassedIn_ReturnsCorrectGroups()
         {
             //act

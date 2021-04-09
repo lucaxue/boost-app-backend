@@ -6577,19 +6577,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/ellieredmayne/.nuget/packages/": {}
+    "/Users/johnjameshodgins/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ellieredmayne/Documents/GitHub/Warriors/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
+      "projectUniqueName": "/Users/johnjameshodgins/Documents/NEWBACKFINAL/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
       "projectName": "EventsApi.UnitTests",
-      "projectPath": "/Users/ellieredmayne/Documents/GitHub/Warriors/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
-      "packagesPath": "/Users/ellieredmayne/.nuget/packages/",
-      "outputPath": "/Users/ellieredmayne/Documents/GitHub/Warriors/project-back-end-we-don-t-byte/EventsApi.UnitTests/obj/",
+      "projectPath": "/Users/johnjameshodgins/Documents/NEWBACKFINAL/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
+      "packagesPath": "/Users/johnjameshodgins/.nuget/packages/",
+      "outputPath": "/Users/johnjameshodgins/Documents/NEWBACKFINAL/project-back-end-we-don-t-byte/EventsApi.UnitTests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/ellieredmayne/.nuget/NuGet/NuGet.Config"
+        "/Users/johnjameshodgins/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6601,8 +6601,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/Users/ellieredmayne/Documents/GitHub/Warriors/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj": {
-              "projectPath": "/Users/ellieredmayne/Documents/GitHub/Warriors/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj"
+            "/Users/johnjameshodgins/Documents/NEWBACKFINAL/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj": {
+              "projectPath": "/Users/johnjameshodgins/Documents/NEWBACKFINAL/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj"
             }
           }
         }
@@ -6661,7 +6661,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -78,6 +78,8 @@ namespace UsersApi.UnitTests
 
             var userRepository = Substitute.For<IRepository<User>>();
             userRepository.GetAll().Returns(x => _users);
+            userRepository.Search("jimmertsonbobert").Returns(x => new List<User>(){_users[2]});
+            //userRepository.Search("").Returns(x => new List<User>(){_users[2]});
             userRepository.Get(3).Returns(x => _users[2]);
             userRepository.Update(_userToUpdate).Returns(x => _userToUpdate);
             userRepository.Insert(_userToPost).Returns(x => _userPosted);
@@ -104,6 +106,24 @@ namespace UsersApi.UnitTests
             var users = ((OkObjectResult)result).Value as List<User>;
             //assert
             users.Should().BeEquivalentTo(_users);
+        }
+        [Fact]
+        public async Task GetAll_NullAndUsernamePassedIn_ReturnsStatusCode200()
+        {
+            //act
+            var result = await _controller.GetAll(null, "jimmertsonbobert");
+            var statusCode = ((OkObjectResult)result).StatusCode;
+            //assert
+            statusCode.Should().Be(200);
+        }
+        [Fact]
+        public async Task GetAll_NullAndUsernamePassedIn_ReturnsCorrectUsers()
+        {
+            //act
+            var result = await _controller.GetAll(null, "jimmertsonbobert");
+            var users = ((OkObjectResult)result).Value as List<User>;
+            //assert
+            users.Should().BeEquivalentTo(new List<User>(){_users[2]});
         }
 
         [Fact]
