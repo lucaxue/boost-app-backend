@@ -35,25 +35,26 @@ namespace GroupsApi.UnitTests
                 },
             };
 
-            _groupToUpdate = new Group 
+            _groupToUpdate = new Group
             {
-                Id=3,
-                Name="Beat the Bulge!",
+                Id = 3,
+                Name = "Beat the Bulge!",
             };
 
             _groupToPost = new Group
             {
-                Name="The Fishermen"
+                Name = "The Fishermen"
             };
 
             _groupPosted = new Group
             {
-                Id=4,
-                Name="The Fishermen"
+                Id = 4,
+                Name = "The Fishermen"
             };
 
             var groupRepository = Substitute.For<IRepository<Group>>();
             groupRepository.GetAll().Returns(x => _groups);
+            groupRepository.Search("mum").Returns(x => new List<Group>() { _groups[1] });
             groupRepository.Get(2).Returns(x => _groups[1]);
             groupRepository.Update(_groupToUpdate).Returns(x => _groupToUpdate);
             groupRepository.Insert(_groupToPost).Returns(x => _groupPosted);
@@ -80,6 +81,16 @@ namespace GroupsApi.UnitTests
             var groups = ((OkObjectResult)result).Value as List<Group>;
             //assert
             groups.Should().BeEquivalentTo(_groups);
+        }
+
+        [Fact]
+        public async Task GetAll_StringPassedIn_ReturnsCorrectGroups()
+        {
+            //act
+            var result = await _controller.GetAll("mum");
+            var groups = ((OkObjectResult)result).Value as List<Group>;
+            //assert
+            groups.Should().BeEquivalentTo(new List<Group>() { _groups[1] });
         }
 
         [Fact]
@@ -121,7 +132,7 @@ namespace GroupsApi.UnitTests
             statusCode.Should().Be(200);
         }
 
-        
+
         [Fact]
         public async Task Put_PassedInIdAndUpdatedGroup_ReturnsUpdatedGroup()
         {
@@ -150,7 +161,7 @@ namespace GroupsApi.UnitTests
             //assert
             postedGroup.Should().Be(_groupPosted);
         }
-      
+
 
 
 

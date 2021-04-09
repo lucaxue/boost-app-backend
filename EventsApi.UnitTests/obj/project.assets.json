@@ -6577,19 +6577,19 @@
     ]
   },
   "packageFolders": {
-    "/home/luca/.nuget/packages/": {}
+    "/Users/ellieredmayne/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
+      "projectUniqueName": "/Users/ellieredmayne/Documents/GitHub/Warriors/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
       "projectName": "EventsApi.UnitTests",
-      "projectPath": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
-      "packagesPath": "/home/luca/.nuget/packages/",
-      "outputPath": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi.UnitTests/obj/",
+      "projectPath": "/Users/ellieredmayne/Documents/GitHub/Warriors/project-back-end-we-don-t-byte/EventsApi.UnitTests/EventsApi.UnitTests.csproj",
+      "packagesPath": "/Users/ellieredmayne/.nuget/packages/",
+      "outputPath": "/Users/ellieredmayne/Documents/GitHub/Warriors/project-back-end-we-don-t-byte/EventsApi.UnitTests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/luca/.nuget/NuGet/NuGet.Config"
+        "/Users/ellieredmayne/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6601,8 +6601,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj": {
-              "projectPath": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj"
+            "/Users/ellieredmayne/Documents/GitHub/Warriors/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj": {
+              "projectPath": "/Users/ellieredmayne/Documents/GitHub/Warriors/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj"
             }
           }
         }
@@ -6661,7 +6661,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
       }
     }
   }
