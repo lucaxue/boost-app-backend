@@ -20,12 +20,14 @@ namespace UsersApi.UnitTests
 
         public UserControllerTest()
         {
-           _users = new List<User>{
+            _users = new List<User>{
                 new User {
                     Id=1,
                     FirstName="Jim",
                     Surname="Bob",
                     Username="jimbob",
+                    PartOfGroupId=1,
+                    AdminOfGroupId=1,
                     Hours=27,
                     EventsIds= new int[]{1,2},
                 },
@@ -34,6 +36,8 @@ namespace UsersApi.UnitTests
                     FirstName="Jom",
                     Surname="Bab",
                     Username="jombab",
+                    PartOfGroupId=3,
+                    AdminOfGroupId=null,
                     Hours=25,
                     EventsIds= new int[]{2},
                 },
@@ -42,6 +46,8 @@ namespace UsersApi.UnitTests
                     FirstName="Jimmertson",
                     Surname="Bobert",
                     Username="jimmertsonbobert",
+                    PartOfGroupId=1,
+                    AdminOfGroupId=null,
                     Hours=17,
                     EventsIds= new int[]{3},
                 },
@@ -49,37 +55,43 @@ namespace UsersApi.UnitTests
 
             _userToUpdate = new User
             {
-                Id=3,
-                FirstName="Jimmerterson",
-                Surname="Bobbarfert",
-                Username="jimmertersonsonbobbartfert",
-                Hours=17,
-                EventsIds= new int[]{3},
+                Id = 3,
+                FirstName = "Jimmerterson",
+                Surname = "Bobbarfert",
+                Username = "jimmertersonsonbobbartfert",
+                PartOfGroupId = 1,
+                AdminOfGroupId = null,
+                Hours = 17,
+                EventsIds = new int[] { 3 },
             };
 
             _userToPost = new User
             {
-                FirstName="Prince",
-                Surname="Philip",
-                Username="princephilip57",
-                Hours=900,
-                EventsIds= new int[]{1},
+                FirstName = "Prince",
+                Surname = "Philip",
+                Username = "princephilip57",
+                PartOfGroupId = 2,
+                AdminOfGroupId = null,
+                Hours = 900,
+                EventsIds = new int[] { 1 },
             };
 
             _userPosted = new User
             {
-                Id=4,
-                FirstName="Prince",
-                Surname="Philip",
-                Username="princephilip57",
-                Hours=900,
-                EventsIds= new int[]{1},
+                Id = 4,
+                FirstName = "Prince",
+                Surname = "Philip",
+                Username = "princephilip57",
+                PartOfGroupId = 2,
+                AdminOfGroupId = null,
+                Hours = 900,
+                EventsIds = new int[] { 1 },
             };
 
             var userRepository = Substitute.For<IRepository<User>>();
             userRepository.GetAll().Returns(x => _users);
-            userRepository.Search("jimmertsonbobert").Returns(x => new List<User>(){_users[2]});
-            //userRepository.Search("").Returns(x => new List<User>(){_users[2]});
+            userRepository.Search("jimmertsonbobert").Returns(x => new List<User>() { _users[2] });
+            userRepository.Search("3").Returns(x => new List<User>() { _users[1] });
             userRepository.Get(3).Returns(x => _users[2]);
             userRepository.Update(_userToUpdate).Returns(x => _userToUpdate);
             userRepository.Insert(_userToPost).Returns(x => _userPosted);
@@ -123,7 +135,27 @@ namespace UsersApi.UnitTests
             var result = await _controller.GetAll(null, "jimmertsonbobert");
             var users = ((OkObjectResult)result).Value as List<User>;
             //assert
-            users.Should().BeEquivalentTo(new List<User>(){_users[2]});
+            users.Should().BeEquivalentTo(new List<User>() { _users[2] });
+        }
+
+        [Fact]
+        public async Task GetAll_GroupIdAndNullPassedIn_ReturnsStatusCode200()
+        {
+            //act
+            var result = await _controller.GetAll("3", null);
+            var statusCode = ((OkObjectResult)result).StatusCode;
+            //assert
+            statusCode.Should().Be(200);
+        }
+
+        [Fact]
+        public async Task GetAll_GroupIdAndNullPassedIn_ReturnsCorrectUsers()
+        {
+            //act
+            var result = await _controller.GetAll("3", null);
+            var users = ((OkObjectResult)result).Value as List<User>;
+            //assert
+            users.Should().BeEquivalentTo(new List<User>() { _users[1] });
         }
 
         [Fact]
