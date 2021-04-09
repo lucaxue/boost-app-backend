@@ -54,7 +54,9 @@ namespace EventsApi.UnitTests
             };
 
             var eventRepository = Substitute.For<IRepository<Event>>();
+
             eventRepository.GetAll().Returns(x => _events);
+            eventRepository.Search("3").Returns(x => new Event[]{_events[2]});
             eventRepository.Get(2).Returns(x => _events[1]);
 
             _controller = new EventController(eventRepository);
@@ -79,7 +81,17 @@ namespace EventsApi.UnitTests
             var result = await _controller.Get(null);
             var events = ((OkObjectResult)result).Value as List<Event>;
             //assert
-            events.Should().BeEquivalentTo(_events);
+                events.Should().BeEquivalentTo(_events);
+        }
+
+        [Fact]
+        public async Task Get_GroupId3PassedIn_ReturnsCorrectEvents()
+        {
+            //act
+            var result = await _controller.Get("3");
+            var events = ((OkObjectResult)result).Value as List<Event>;
+            //assert
+            events.Should().BeEquivalentTo(new Event[]{_events[2]});
         }
 
         [Fact]
@@ -87,6 +99,16 @@ namespace EventsApi.UnitTests
         {
             //act
             var statusCode = ((OkObjectResult)_controller.Delete(2)).StatusCode;
+            //assert
+            statusCode.Should().Be(200);
+        }
+
+        [Fact]
+        public async Task GetById_PassedInTwo_ReturnStatusCode200()
+        {
+            //act
+            var result = await _controller.GetById(2);
+            var statusCode = ((OkObjectResult)result).StatusCode;
             //assert
             statusCode.Should().Be(200);
         }
@@ -101,15 +123,8 @@ namespace EventsApi.UnitTests
             returnedEvent.Should().BeEquivalentTo(_events[1]);
         }
 
-        [Fact]
-        public async Task GetById_PassedInTwo_ReturnStatusCode200()
-        {
-            //act
-            var result = await _controller.GetById(2);
-            var statusCode = ((OkObjectResult)result).StatusCode;
-            //assert
-            statusCode.Should().Be(200);
-        }
+
+
 
     }
 }
