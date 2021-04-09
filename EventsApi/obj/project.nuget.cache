@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "Pql7IuMe0UA4lrNSNy9evcMok3RqkxSfHK2tnjyKY5oX4mFvkB0J+5sYY2ceSoo6pTrHeMBLZfzFJnEFa0UuLQ==",
+  "dgSpecHash": "GTm0ylI0A4daSXb/PQ2TjP8uBE6yg25MA1G5tR6UuEE4vOe0qRwG7nditpZAoc8v5zuzTcZa2kkonvV2tKJwsg==",
   "success": true,
-  "projectFilePath": "/home/luca/SOCprojects/finalProject/back-end/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
+  "projectFilePath": "/Users/johnjameshodgins/Documents/NEWBACKFINAL/project-back-end-we-don-t-byte/EventsApi/EventsApi.csproj",
   "expectedPackageFiles": [
-    "/home/luca/.nuget/packages/dapper/2.0.78/dapper.2.0.78.nupkg.sha512",
-    "/home/luca/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
-    "/home/luca/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
-    "/home/luca/.nuget/packages/npgsql/5.0.3/npgsql.5.0.3.nupkg.sha512",
-    "/home/luca/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
-    "/home/luca/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
-    "/home/luca/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
-    "/home/luca/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
-    "/home/luca/.nuget/packages/system.runtime.compilerservices.unsafe/4.6.0/system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
+    "/Users/johnjameshodgins/.nuget/packages/dapper/2.0.78/dapper.2.0.78.nupkg.sha512",
+    "/Users/johnjameshodgins/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/johnjameshodgins/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/johnjameshodgins/.nuget/packages/npgsql/5.0.3/npgsql.5.0.3.nupkg.sha512",
+    "/Users/johnjameshodgins/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/Users/johnjameshodgins/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/Users/johnjameshodgins/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/Users/johnjameshodgins/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
+    "/Users/johnjameshodgins/.nuget/packages/system.runtime.compilerservices.unsafe/4.6.0/system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
   ],
   "logs": []
 }

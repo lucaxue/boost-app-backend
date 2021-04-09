@@ -35,6 +35,6 @@ public class EventRepository : BaseRepository, IRepository<Event>
   public async Task<IEnumerable<Event>> Search(string query)
   {
     using var connection = CreateConnection();
-    return await connection.QueryAsync<Event>("SELECT * FROM Events WHERE GroupId = @GroupId;", new { GroupId = Int32.Parse(query) });
+    return await connection.QueryAsync<Event>("SELECT * FROM Events WHERE GroupId = @GroupId ORDER BY Time ASC;", new { GroupId = Int32.Parse(query) });
   }
 }
