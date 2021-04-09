@@ -15,6 +15,8 @@ namespace EventsApi.UnitTests
         readonly EventController _controller;
         readonly List<Event> _events;
 
+        readonly Event _eventToUpdate;
+
         public EventsControllerTest()
         {
             _events = new List<Event>(){
@@ -51,14 +53,39 @@ namespace EventsApi.UnitTests
                     Intensity="easy",
                     GroupId=3,
                 },
+                  new Event {
+                    Id=3,
+                    Name="cycling",
+                    Description="cycling in park",
+                    ExerciseType="cycling",
+                    Longitude=52.4862F,
+                    Latitude=1.8904F,
+                    Time=new DateTime(2021, 8, 18, 16, 32, 0),
+                    Intensity="easy",
+                    GroupId=3,
+                },
+            };
+
+            _eventToUpdate = new Event
+            {
+                Id = 3,
+                Name = "walking",
+                Description = "walking in park",
+                ExerciseType = "running",
+                Longitude = 52.4862F,
+                Latitude = 1.8904F,
+                Time = new DateTime(2021, 8, 18, 16, 32, 0),
+                Intensity = "easy",
+                GroupId = 3,
             };
 
             var eventRepository = Substitute.For<IRepository<Event>>();
 
             eventRepository.GetAll().Returns(x => _events);
             eventRepository.Search("3").Returns(x => _events);
-           // eventRepository.Search("3").Returns(x => new List<Event>(){_events[2]});
+            // eventRepository.Search("3").Returns(x => new List<Event>(){_events[2]});
             eventRepository.Get(2).Returns(x => _events[1]);
+            eventRepository.Update(_eventToUpdate).Returns(x => _eventToUpdate);
 
             _controller = new EventController(eventRepository);
         }
@@ -74,7 +101,7 @@ namespace EventsApi.UnitTests
             statusCode.Should().Be(200);
         }
 
-        
+
         [Fact]
         public async Task Get_NullPassedIn_ReturnsAllEvents()
         {
@@ -82,7 +109,7 @@ namespace EventsApi.UnitTests
             var result = await _controller.Get(null);
             var events = ((OkObjectResult)result).Value as List<Event>;
             //assert
-                events.Should().BeEquivalentTo(_events);
+            events.Should().BeEquivalentTo(_events);
         }
 
         [Fact]
@@ -115,7 +142,7 @@ namespace EventsApi.UnitTests
         }
 
         [Fact]
-        public async Task GetById_PassedInTwo_ReturnEventAtIdTwo()
+        public async Task GetById_PassedInTwo_ReturnsEventAtIdTwo()
         {
             //act
             var result = await _controller.GetById(2);
@@ -124,7 +151,19 @@ namespace EventsApi.UnitTests
             returnedEvent.Should().BeEquivalentTo(_events[1]);
         }
 
+        [Fact]
+        public async Task Put_PassedInUpdatedEvent_ReturnsUpdatedEvent()
+        {
+            //act
 
+
+            var result = await _controller.Put(3, _eventToUpdate);
+
+
+            var updatedEvent = ((OkObjectResult)result).Value as Event;
+            //assert
+            updatedEvent.Should().Be(_eventToUpdate);
+        }
 
 
     }
