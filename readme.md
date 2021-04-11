@@ -28,7 +28,8 @@ Testing:
   - Delete user
   - Get users by group id (query string)
     - `/users?groupId=1`
-  - Get users by username (query string) - `/users?username=JimBob`
+  - Get users by username (query string) 
+    - `/users?username=JimBob`
   </details>
 
 <details>
@@ -40,7 +41,8 @@ Testing:
   - Post group
   - Update group
   - Delete group
-  - Get group by name (query string) - `/groups?name=Weekend Warriors`
+  - Get group by name (query string) 
+    - `/groups?name=Weekend Warriors`
   </details>
 
 <details>
@@ -52,6 +54,7 @@ Testing:
   - Post event
   - Update event
   - Delete event
-  - Get events by group id (query string) - `/events?groupId=1`
+  - Get events by group id (query string) 
+    - `/events?groupId=1`
   </details>
   <br/>
