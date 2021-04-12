@@ -1,6 +1,6 @@
 # Events API
 
-## An RESTful API made for an exercise focused event making app
+## A RESTful API made for an exercise focused event making app
 
 <em>Checkout the frontend React app source code [here](https://github.com/lucaxue/boost-app-frontend).</em>
 
