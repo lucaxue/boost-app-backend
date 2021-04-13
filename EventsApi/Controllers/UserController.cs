@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
-
+using System.Linq;
 
 [ApiController]
 [Route("[controller]s")]
@@ -25,12 +25,15 @@ public class UserController : ControllerBase
       if (groupId != null)
       {
         var searchedByGroupIdResults = await _userRepository.Search(groupId);
-        return Ok(searchedByGroupIdResults);
       }
       if (username != null)
       {
         var searchedByUsernameResults = await _userRepository.Search(username);
-        return Ok(searchedByUsernameResults);
+        if (searchedByUsernameResults.Any())
+        {
+          return Ok(searchedByUsernameResults);
+        }
+        return NotFound($"Sorry, there is no user with the username of {username}");
       }
       var allUsers = await _userRepository.GetAll();
       return Ok(allUsers);
