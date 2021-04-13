@@ -30,7 +30,11 @@ public class UserController : ControllerBase
       if (username != null)
       {
         var searchedByUsernameResults = await _userRepository.Search(username);
-        return Ok(searchedByUsernameResults);
+        if (searchedByUsernameResults.Any())
+        {
+          return Ok(searchedByUsernameResults);
+        }
+        return NotFound($"Sorry, there is no user with the username of {username}");
       }
       var allUsers = await _userRepository.GetAll();
       return Ok(allUsers);
