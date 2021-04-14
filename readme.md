@@ -2,7 +2,7 @@
 
 ## A RESTful API made for an exercise focused event making app
 
-<em>Checkout the frontend React app source code [here](https://github.com/lucaxue/boost-app-frontend).</em>
+<em>Checkout the frontend React app source code [here](https://github.com/SchoolOfCode/project-front-end-we-don-t-byte).</em>
 
 - Built with ASP.NET Core
 - Using Dapper ORM
