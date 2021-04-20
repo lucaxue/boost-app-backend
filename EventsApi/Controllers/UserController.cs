@@ -3,7 +3,6 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
-using System.Linq;
 
 [ApiController]
 [Route("[controller]s")]
@@ -26,6 +25,7 @@ public class UserController : ControllerBase
       if (groupId != null)
       {
         var searchedByGroupIdResults = await _userRepository.Search(groupId);
+        return Ok(searchedByGroupIdResults);
       }
       if (username != null)
       {

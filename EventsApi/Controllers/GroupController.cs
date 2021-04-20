@@ -30,7 +30,7 @@ public class GroupController : ControllerBase
     }
     catch (Exception)
     {
-      return NotFound("Sorry, there are no users.");
+      return NotFound("Sorry, out of order.");
     }
   }
 
