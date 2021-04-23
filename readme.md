@@ -2,7 +2,7 @@
 
 ## A RESTful API made for an exercise focused event making app
 
-<em>Checkout the frontend React app source code [here](https://github.com/SchoolOfCode/project-front-end-we-don-t-byte).</em>
+<em>Checkout the frontend React app source code [here](https://github.com/lucaxue/boost-app-frontend).</em>
 
 - Built with ASP.NET Core
 - Using Dapper ORM
@@ -15,6 +15,7 @@ Testing:
 - FluentAssertions for easier assertion syntax
 
 ## Routes
+
 <em>Checkout the database design [here](https://drawsql.app/wedontbyte/diagrams/events-api#).</em>
 
 <details>
@@ -28,9 +29,9 @@ Testing:
   - Delete user
   - Get users by group id (query string)
     - `/users?groupId=1`
-  - Get users by username (query string) 
+  - Get users by username (query string)
     - `/users?username=JimBob`
-  </details>
+    </details>
 
 <details>
   <summary>/groups</summary>
@@ -41,9 +42,9 @@ Testing:
   - Post group
   - Update group
   - Delete group
-  - Get group by name (query string) 
+  - Get group by name (query string)
     - `/groups?name=Weekend Warriors`
-  </details>
+    </details>
 
 <details>
   <summary>/events</summary>
@@ -54,7 +55,7 @@ Testing:
   - Post event
   - Update event
   - Delete event
-  - Get events by group id (query string) 
+  - Get events by group id (query string)
     - `/events?groupId=1`
-  </details>
-  <br/>
+    </details>
+    <br/>
